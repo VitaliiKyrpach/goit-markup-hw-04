@@ -1,0 +1,282 @@
+:root {
+  --primary-text-color: #434455;
+  --secondary-text-color: #2e2f42;
+  --third-text-color: #ffffff;
+  --footer-text-color: #e7e9fc;
+  --accent-text-color: #f4f4fd;
+  --logo-text-color: #4d5ae5;
+  --primary-background: #ffffff;
+  --secondary-background: #f4f4fd;
+  --footer-background: #2e2f42;
+  --button-active: #404bbf;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--primary-text-color);
+  background-color: var(--primary-background);
+}
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.list {
+  list-style-type: none;
+}
+.link {
+  text-decoration: none;
+}
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.flex {
+  display: flex;
+}
+/* -----------------header----------------- */
+.header {
+  border-bottom: 1px solid #e7e9fc;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+.logo {
+  color: var(--logo-text-color);
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-right: 76px;
+}
+.logo-head {
+  color: var(--secondary-text-color);
+}
+.nav-link {
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #404bbf;
+}
+.address {
+  font-style: normal;
+  margin-left: auto;
+}
+.add-list {
+  display: flex;
+  gap: 40px;
+}
+.address-link {
+  color: var(--primary-text-color);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.address-link:hover,
+.address-link:focus {
+  color: var(--button-active);
+}
+/* -----------------hero----------------- */
+.hero {
+  background-color: var(--footer-background);
+  padding-top: 188px;
+  padding-bottom: 188px;
+  text-align: center;
+}
+.hero-title {
+  color: var(--third-text-color);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: 0.02em;
+  width: 496px;
+  margin: 0 auto 48px;
+}
+/* -----------------advantages----------------- */
+.advantages {
+  padding-top: 120px;
+}
+.adv-list {
+  display: flex;
+  gap: 24px;
+}
+.adv-list .list-item {
+  width: calc((100% - 72px) / 4);
+}
+.advantages .text-title {
+  margin-bottom: 8px;
+}
+/* -----------------What are we doing----------------- */
+.examples {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.examples .title {
+  margin-bottom: 72px;
+}
+.examples-list {
+  display: flex;
+  gap: 24px;
+}
+/* -----------------team----------------- */
+.team {
+  background-color: var(--secondary-background);
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.team .title {
+  margin-bottom: 72px;
+}
+.team-list {
+  display: flex;
+  gap: 24px;
+}
+.team-content {
+  padding: 32px 0;
+  text-align: center;
+}
+.card .text-title {
+  margin-bottom: 8px;
+}
+/* -----------------footer----------------- */
+.footer {
+  background-color: var(--footer-background);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.footer .logo {
+  display: block;
+  margin-bottom: 8px;
+}
+.footer .content {
+  width: 264px;
+}
+.logo-btm {
+  color: var(--accent-text-color);
+}
+.footer .text {
+  color: var(--footer-text-color);
+}
+/* -----------------shared----------------- */
+.button {
+  font-family: "Roboto", sans-serif;
+  color: var(--third-text-color);
+  background-color: var(--logo-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+}
+.button-secondary {
+  font-family: "Roboto", sans-serif;
+  color: var(--logo-text-color);
+  background-color: var(--secondary-background);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  padding: 12px 24px;
+  border: 1px solid #e7e9fc;
+  border-radius: 4px;
+}
+.button:hover,
+.button:focus,
+.button-secondary:hover,
+.button-secondary:focus {
+  color: var(--third-text-color);
+  background-color: var(--button-active);
+}
+
+.text-title {
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.text {
+  color: var(--primary-text-color);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.title {
+  color: var(--secondary-text-color);
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+.team {
+  background-color: var(--secondary-background);
+}
+.card {
+  background-color: var(--primary-background);
+}
+/* -----------------portfolio----------------- */
+.portfolio {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 72px;
+}
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+}
+.card-content {
+  padding: 32px 16px;
+  border: 1px solid #e7e9fc;
+  border-top: none;
+}
