@@ -88,11 +88,13 @@ body {
   color: var(--secondary-text-color);
 }
 .nav-link {
+  display: block;
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover,
 .nav-link:focus {
@@ -111,10 +113,24 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link:hover,
 .address-link:focus {
   color: var(--button-active);
+}
+.current {
+  position: relative;
+}
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0px;
+  top: 44px;
+  background: var(--button-active);
+  border-radius: 2px;
 }
 /* -----------------hero----------------- */
 .hero {
@@ -216,6 +232,7 @@ body {
   background-color: var(--logo-text-color);
   border-radius: 50%;
   color: var(--secondary-background);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .soc-link:hover,
 .soc-link:focus {
@@ -249,6 +266,7 @@ body {
   border: 1px solid var(--icon-customers);
   border-radius: 4px;
   color: var(--icon-customers);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cust-link .icon {
   fill: currentColor;
@@ -256,7 +274,8 @@ body {
 .cust-link:hover,
 .cust-link:focus {
   color: var(--button-active);
-  border-color: var(--button-active)}
+  border-color: var(--button-active);
+}
 /* -----------------footer----------------- */
 .footer {
   background-color: var(--footer-background);
@@ -301,6 +320,7 @@ body {
   background-color: var(--logo-text-color);
   border-radius: 50%;
   color: var(--secondary-background);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .smedia-link:hover,
 .smedia-link:focus {
@@ -322,6 +342,8 @@ body {
   padding: 16px 32px;
   border-radius: 4px;
   border: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-secondary {
   font-family: "Roboto", sans-serif;
@@ -335,6 +357,8 @@ body {
   padding: 12px 24px;
   border: 1px solid var(--footer-text-color);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover,
 .button:focus,
@@ -384,12 +408,20 @@ body {
   gap: 24px;
   margin-bottom: 72px;
 }
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+}
 .cards-list .link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cards-list .link:hover,
 .cards-list .link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.cards-list .link:hover .card-thumb .text {
+  transform: translate(0);
 }
 .cards-list {
   display: flex;
@@ -397,8 +429,55 @@ body {
   column-gap: 24px;
   row-gap: 48px;
 }
+.cards-list .card {
+  width: calc((100% - 48px) / 3);
+}
 .card-content {
   padding: 32px 16px;
   border: 1px solid var(--footer-text-color);
   border-top: none;
+}
+
+.card-thumb .text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  color: var(--accent-text-color);
+  background-color: var(--logo-text-color);
+  margin-bottom: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* -----------------modal----------------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+.modal {
+  position: absolute;
+  padding: 24px;
+  top: 50%;
+  left: 50%;
+  height: 576px;
+  width: 408px;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+}
+.modal-close {
+  display: block;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
